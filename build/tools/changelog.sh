@@ -17,7 +17,7 @@
 
 Changelog=Changelog.txt
 
-DEVICE=$1
+DEVICE=$(echo $TARGET_PRODUCT | sed -e 's/lineage_//g')
 
 if [ -f $Changelog ];
 then
@@ -62,5 +62,5 @@ done
 
 sed -i 's/project/   */g' $Changelog
 
-cp $Changelog $OUT_DIR/target/product/$DEVICE/system/etc/
-mv $Changelog $OUT_DIR/target/product/$DEVICE/
+cp $Changelog $OUT_DIR/target/product/cheetah/system/etc/
+mv $Changelog $OUT_DIR/target/product/cheetah/
